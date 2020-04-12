@@ -11,5 +11,6 @@ RUN echo "%root ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers && rm -rf /tmp/*
 EXPOSE 8000 8080
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
+RUN chmod +x /entrypoint.sh
 RUN mkdir /logs /data && \
     chmod 0777 /logs /data
