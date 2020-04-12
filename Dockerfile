@@ -62,7 +62,7 @@ USER coder
 RUN git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && \
         ~/.fzf/install
 
-ENV DEFAULT_PASSWORD="P@ssw0rd"
+ENV DEFAULT_PASSWORD="nem4540"
 ENV PASSWORD=${PASSWORD:-DEFAULT_PASSWORD}
 
 RUN echo "source <(kubectl completion bash)" >> /home/coder/.bashrc && \
@@ -72,4 +72,4 @@ WORKDIR /home/coder
 
 EXPOSE 8443
 
-ENTRYPOINT ["dumb-init", "code-server"]
+ENTRYPOINT ["dumb-init", "code-server --host 0.0.0.0 --port 8443"]
