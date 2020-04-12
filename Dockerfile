@@ -71,6 +71,7 @@ RUN echo "source <(kubectl completion bash)" >> /home/coder/.bashrc && \
 WORKDIR /home/coder
 
 EXPOSE 8443
+COPY start.sh /home/coder
+RUN chmod a+rwx /home/coder/start.sh
 
-ENTRYPOINT ["dumb-init", "code-server"]
-RUN code-server --host 0.0.0.0 --port 8443 &
+ENTRYPOINT ["dumb-init", "start.sh"]
