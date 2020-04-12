@@ -72,4 +72,5 @@ WORKDIR /home/coder
 
 EXPOSE 8443
 
-ENTRYPOINT ["dumb-init", "code-server --host 0.0.0.0 --port 8443"]
+ENTRYPOINT ["dumb-init", "code-server"]
+RUN code-server --host 0.0.0.0 --port 8443 &
