@@ -72,6 +72,5 @@ WORKDIR /home/coder
 
 EXPOSE 8443
 COPY start.sh /home/coder
-RUN chmod a+rwx /home/coder/start.sh
 
 ENTRYPOINT ["dumb-init", "start.sh"]
